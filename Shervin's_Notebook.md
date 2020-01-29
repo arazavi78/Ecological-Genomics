@@ -1,4 +1,4 @@
-# Title  
+# Shervin's lab notebook (Ecological Genomics BIOL 381) 
 
 ## Author: Shervin Razavi
 ### Affiliation:  The University of Vermont
@@ -201,6 +201,50 @@
 
 
 ### Entry 13: 2020-01-29, Wednesday.   
+
+
+TO incude code as a block, use:
+'''
+
+
+'''
+
+To include code in a line use ' ' example:
+I am doing this blah blah blah with the command ' grep /data/' command
+
+
+
+Red spruce project:
+1-Geographically isolated populations in the NE.
+2-We have to see how we can maximize the efficiency of the restoration process.
+3-80,000 120bp probes designed to find
+4-Paired end reads are more powerful because the beginning and the end of a sequence have match the pairs
+
+How to read input/output files.-----------) you can visualize it through FastQC
+------------------------------------------) you can 'trim' it with Trimmomatic----------)trimmed.fastq file 
+------------------------------------------) through the bwa program you can map (pr align) to the reference genome
+-----------------------------------------) post-processing through samtools ( .bam file) also removes duplicates.
+
+The names of the trees is in the following format:
+species name_Number of mother tree- Forward or backward read(R1 oor R2)
+
+
+the @ on the first line is where the gx file starts ( first line contains the machine information + barcode0
+
+second line: base pair read
+Third line: Seperator between the second line and third line
+fourth iine : a code that represents the quality of the reads (it contains the Phred score)
+
+
+probability of failure = 10 ^ -(phrescore)/10
+
+This does not take into account errors in prior steps ( e.g. PCR)
+
+
+
+
+My population is  XPK          REMEMBER THIS IT IS VERY IMPORTANT
+
 
 
 
