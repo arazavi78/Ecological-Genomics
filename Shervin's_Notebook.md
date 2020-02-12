@@ -343,6 +343,11 @@ samtools flagstat was preformed on the *.sam files.
 
 
 
+Depth of coverage :How many reads stack up against any single position in the reference genome.
+
+
+Samtools t-view ---) is a lightweight viewer
+
 ------    
 <div id='id-section24'/>   
 
