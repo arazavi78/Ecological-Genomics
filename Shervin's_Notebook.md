@@ -326,6 +326,21 @@ My population is  XPK          REMEMBER THIS IT IS VERY IMPORTANT
 
 ### Entry 23: 2020-02-12, Wednesday.   
 
+Sam file stuff:
+
+
+
+use the "tail" command to get to the end of the file.
+the second number is the flag number which gives you information about the read ( you can look up the meaning of the "flag" number  in the internet).
+
+The third number is the place where the contig mapped to.
+The forth number is the left position of the read
+The fifth number is the quality number ( the higher the better)
+
+
+samtools flagstat was preformed on the *.sam files.
+
+
 
 
 ------    
