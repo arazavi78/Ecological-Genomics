@@ -348,6 +348,37 @@ Depth of coverage :How many reads stack up against any single position in the re
 
 Samtools t-view ---) is a lightweight viewer
 
+
+Genotype likelihood takes into account all of the possibilities that exist and does not simply go with the most probable situation.
+
+
+ANGSD is a pretty cool platform you will use often!
+
+
+Workflow of ANGSD---) first site frequency spectrum (SNP frequency).
+2- estimate nucleotide diversities
+3-estiemate fst between all populations or pairwise between sets of populations.
+perfom a genetic PCA based on estimatio of the genetic covariance matrix ( this 
+
+
+Go over the concepts ( picture taken from teh meanings of the 
+
+
+Also go over PCA.
+
+
+
+
+The final code is very interesting and has a lot of relevant genomic information 
+
+
+look up the meaning of the ANGSD command options.
+
+Major allele : most frequent allele.
+
+
+
+
 ------    
 <div id='id-section24'/>   
 
