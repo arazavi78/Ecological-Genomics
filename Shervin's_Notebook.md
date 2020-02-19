@@ -417,6 +417,12 @@ Major allele : most frequent allele.
 
 ### Entry 28: 2020-02-19, Wednesday.   
 
+the bottleneck is inherited from the ancestor.
+
+Because Tajima's D is bigger than 1, the populations are porbably undergoing the same selective pressure.
+
+
+
 
 
 ------    
