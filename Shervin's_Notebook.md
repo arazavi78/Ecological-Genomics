@@ -422,6 +422,13 @@ the bottleneck is inherited from the ancestor.
 Because Tajima's D is bigger than 1, the populations are porbably undergoing the same selective pressure.
 
 
+Small values of theta and pi, hence not a lot going on.
+
+The species not growing ( it is tanking because of the positive value of Tajima'd D)
+
+next step;
+
+   which particular SNPs are contributing to the local adaptatio????------------------) GWAs
 
 
 
