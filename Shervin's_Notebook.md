@@ -459,14 +459,57 @@ Transcriptomics : -Experimentally hold/control environmental conditions constant
 
 Phenotypes: Characteristics of an organism that can be observed. Disease resistance/susceptibility (cellular level) or color (morphological scale).
 
-Central dogma of molecular bioloy: DNA ------(transcription-----) RNA -----(Translation)------) Protein
+Central dogma of molecular bioloy: DNA ------(transcription-----) RNA -----(Translation)------) Protein -------) Phenotype
+
+
+Reverse Ecology ----) Like GWAS
+
+
+
+mutations ( at the DNA level):-----) -coding regions (Change of amino acids) 
+                  -splice site variation
+                  -promoter enhancer- expression level.
+                           -expression level
+                           -timing of expression 
+                           -cell/tissue typpe of expressed gene 
+                           -conditions under which a gene is expressed  (e.g. ogranisms that have diverged in their diversity of heat                                   stress
+Epigenetic modificaitons
+
+                           
+Post translational modifications ( at the Protein level)
 
 
 
 
+P = G + E + (G*E)
+Experimentally induce yout phenotype of interest and control the environment --------------) molecular underpinnings of phenotypes.
 
 
+Factors :
+         - Controlling the envionmental condiiton (common garden)
+         - Treatments/Conditions that you  are interested in
+         - Populations of interest
+         - Tissue that is being sampled
+         - Life histoory change
+         - Transgenerational enviornment 
+         - Sexual dimorphism ( Sex and Reproductive stage )
+         
+         
+HOW can we compare different species 
 
+Work flow :
+           1-Careful experimental design
+               -Questions Hypotheses ( it could be broad [*omics] or a priori hypotheses]
+           2- Experiment
+                - sample tissues/individuals
+                - sample RNA - labile           mRNA
+                -Extract, prep, sequence        3' tag 
+           3- Process + analyze data
+               Quality check ----) Clean ----) qualiy check (.fastq)
+               map to ref + Extract count data
+               Normalization of data  -----------)) generation of data mattrix.
+           4- integrate: functional enrichment aalyses, network analyses
+                        and you can integrate with other data types such as SNP and TajD, pi, microbiome, epigenetic data, proteomics,                            environment.       
 ------    
 <div id='id-section32'/>   
 
