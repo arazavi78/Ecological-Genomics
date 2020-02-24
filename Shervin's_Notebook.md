@@ -455,6 +455,17 @@ next step;
 ### Entry 31: 2020-02-24, Monday.   
 
 
+Transcriptomics : -Experimentally hold/control environmental conditions constant to reveal genetically controlled differences of phenotypes at the molecular level.
+
+Phenotypes: Characteristics of an organism that can be observed. Disease resistance/susceptibility (cellular level) or color (morphological scale).
+
+Central dogma of molecular bioloy: DNA ------(transcription-----) RNA -----(Translation)------) Protein
+
+
+
+
+
+
 
 ------    
 <div id='id-section32'/>   
