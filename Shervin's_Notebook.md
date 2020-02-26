@@ -286,6 +286,9 @@ My population is  XPK          REMEMBER THIS IT IS VERY IMPORTANT
 
 ### Entry 18: 2020-02-05, Wednesday.   
 
+Mapping the population and writing a code.
+
+
 
 
 ------    
