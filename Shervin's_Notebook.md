@@ -582,6 +582,46 @@ Work flow :
 
 
 
+
+Toay we will work on transcriptomics:
+
+####Experimental Design:
+Ten maternal families total; sample labels are “POP_FAM”
+ASC_06, BRU_05, ESC_01, XBM_07, NOR_02, CAM_02, JAY_02, KAN_04, LOL_02, MMF_13
+Two Source Climates (SourceClim:
+HotDry (5 fams): ASC_06, BRU_05, ESC_01, XBM_07, NOR_02
+CoolWet (5 fams): CAM_02, JAY_02, KAN_04, LOL_02, MMF_13
+Experimental Treatments (Trt):
+Control: watered every day, 16:8 L:D photoperiod at 23C:17C temps
+Heat: 16:8 L:D photoperiod at 35C:26C temps (50% increase in day and night temps over controls)
+Heat+Drought: Heat plus complete water witholding
+Three time periods (Day):
+Harvested tissues on Days 0, 5, and 10
+Extracted RNA from whole seedlings (root, stem, needle tissue)
+Aimed for 5 biological reps per Trt x SourceClim x Day combo, but day5 had few RNA extractions that worked
+
+
+
+
+Questions that we could answer given the experimental desiggn ( two origin pops, 3 treatments, 3 experimental days).
+
+1- Do individuals from different sources have different responses to different enviornments or different time points?
+  you  can make regression models with interaction variables. Basically, you can make the interactions between the three factors.
+
+2-
+
+
+3-
+
+
+4-
+
+
+
+
+
+
+
 ------    
 <div id='id-section34'/>   
 
