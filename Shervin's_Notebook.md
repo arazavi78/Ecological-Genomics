@@ -364,16 +364,7 @@ Workflow of ANGSD---) first site frequency spectrum (SNP frequency).
 perfom a genetic PCA based on estimatio of the genetic covariance matrix ( this 
 
 
-Go over the concepts ( picture taken from teh meanings of the 
-
-
-Also go over PCA.
-
-
-
-
 The final code is very interesting and has a lot of relevant genomic information 
-
 
 look up the meaning of the ANGSD command options.
 
@@ -427,11 +418,11 @@ Because Tajima's D is bigger than 1, the populations are porbably undergoing the
 
 Small values of theta and pi, hence not a lot going on.
 
-The species not growing ( it is tanking because of the positive value of Tajima'd D)
+The species not growing ( it is tanking because of the positive value of Tajima's D)
 
-next step;
+next step:
 
-   which particular SNPs are contributing to the local adaptatio????------------------) GWAs
+   which particular SNPs are contributing to the local adaptations??------------------) GWAs
 
 
 
