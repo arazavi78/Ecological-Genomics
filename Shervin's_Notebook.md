@@ -608,13 +608,15 @@ Questions that we could answer given the experimental desiggn ( two origin pops,
 1- Do individuals from different sources have different responses to different enviornments or different time points?
   you  can make regression models with interaction variables. Basically, you can make the interactions between the three factors.
 
-2-
+2- Do families from different source climates differ in gene expression?
 
 
-3-
+3- Is there a transcriptome wide response to heat stress? Does this change when the additional stress of drought is added
 
 
-4-
+4- Which specific genes are involved in the above response?5-Do DE genes or pathways show evidence of positive selection?
+
+6- Association mapping.
 
 
 
