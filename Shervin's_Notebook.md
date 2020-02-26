@@ -302,6 +302,13 @@ The Process_bam.sh script converts the sam files to bam files, deletes the PCR d
  It is impotant to note that the PCR duplicates are removed because they lead to a lot of false positive calls.
 
 
+Make sure to copy file locations accurately.
+
+
+The mypipeline.sh script includes the two other scripts so that the "mother" defined variables (found in the mypipeline.sh script) do not have to be signified over and over again.
+
+To test if it is working, make sure you have the main variables loaded on the system so you can run the other two scripts from outside of the mypipeline.sh script.
+
 ------    
 <div id='id-section19'/>   
 
