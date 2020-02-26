@@ -162,6 +162,16 @@
 
 ### Entry 8: 2020-01-22, Wednesday.   
 
+New learned codes:
+
+'''
+
+git status
+git add --all 
+git status
+git commit -m
+git push 
+'''
 
 
 ------    
@@ -209,6 +219,8 @@ TO incude code as a block, use:
 
 '''
 
+
+
 To include code in a line use ' ' example:
 I am doing this blah blah blah with the command ' grep /data/' command
 
@@ -243,8 +255,19 @@ This does not take into account errors in prior steps ( e.g. PCR)
 
 
 
-My population is  XPK          REMEMBER THIS IT IS VERY IMPORTANT
+###My population is  XPK          REMEMBER THIS IT IS VERY IMPORTANT
 
+Codding:
+
+Make sure to alwayas pull and referesh your local repository before you commit and push.
+
+the following code is used to do so:
+'''
+git pull
+git commit --all
+git push
+
+'''
 
 
 
