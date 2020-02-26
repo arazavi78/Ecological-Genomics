@@ -286,9 +286,20 @@ My population is  XPK          REMEMBER THIS IT IS VERY IMPORTANT
 
 ### Entry 18: 2020-02-05, Wednesday.   
 
-Mapping the population and writing a code.
+Today we will be focusing on mapping to a subset of the reference genome.
+
+Notes:
+
+For the mapping scripts, we have to give both the forward and reverse reads of each individual and map it to the reference genome.  This will generate a sam file which can further on be converted to a bam file that is readable.
 
 
+The Process_bam.sh script converts the sam files to bam files, deletes the PCR duplicates and  converts the final output to index files.
+ 
+ 
+ we use seperate for loops for the processes used in this script.
+ 
+ 
+ It is impotant to note that the PCR duplicates are removed because they lead to a lot of false positive calls.
 
 
 ------    
