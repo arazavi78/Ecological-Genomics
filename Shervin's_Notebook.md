@@ -620,6 +620,7 @@ Questions that we could answer given the experimental desiggn ( two origin pops,
 
 
 
+My populations are  #NOR H and XBM C
 
 
 
