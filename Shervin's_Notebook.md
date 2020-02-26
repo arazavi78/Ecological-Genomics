@@ -429,6 +429,11 @@ Major allele : most frequent allele.
 
 ### Entry 28: 2020-02-19, Wednesday.   
 
+Folded SFS is used for cases that we do not know their clear ancestry.
+
+
+
+
 the bottleneck is inherited from the ancestor.
 
 Because Tajima's D is bigger than 1, the populations are porbably undergoing the same selective pressure.
@@ -440,7 +445,23 @@ The species not growing ( it is tanking because of the positive value of Tajima'
 
 next step:
 
+
+ANGSD_mypop.sh:
+
+
+Make sure for the final analysis to not have the 
+
+
+fold 1 is used to indicate the usage of the folded sfs.
+
+coding note: make sure not to use "\" on the last option of the ANGSD command
+
+
    which particular SNPs are contributing to the local adaptations??------------------) GWAs
+
+
+
+
 
 
 
