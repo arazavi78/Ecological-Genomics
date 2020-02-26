@@ -624,6 +624,15 @@ My populations are  #NOR H and XBM C
 
 
 
+The headcrop comman was used in the trimmomatic program to delete the first 12 base pairs.
+
+You can se the effect comparing the fastqc of the cleaned reads and the normals reads.
+
+
+For the overrepresented sequences, the fastqc gives you data on the percentage the reads have been found and also the length of it.
+
+
+
 
 ------    
 <div id='id-section34'/>   
