@@ -232,11 +232,14 @@ Red spruce project:
 3-80,000 120bp probes designed to find
 4-Paired end reads are more powerful because the beginning and the end of a sequence have match the pairs
 
-How to read input/output files.-----------) you can visualize it through FastQC
-------------------------------------------) you can 'trim' it with Trimmomatic----------)trimmed.fastq file 
+# How to read input/output files.
+-----------) you can visualize it through FastQC
+------------------------------------------) you can 'trim' it with Trimmomatic
+----------)trimmed.fastq file 
 ------------------------------------------) through the bwa program you can map (pr align) to the reference genome
 -----------------------------------------) post-processing through samtools ( .bam file) also removes duplicates.
 
+# interpretation of data
 The names of the trees is in the following format:
 species name_Number of mother tree- Forward or backward read(R1 oor R2)
 
@@ -269,6 +272,11 @@ git push
 
 '''
 
+# Other useful git commands:
+'''
+git status
+
+'''
 
 
 ------    
@@ -370,21 +378,16 @@ To test if it is working, make sure you have the main variables loaded on the sy
 
 ### Entry 23: 2020-02-12, Wednesday.   
 
-Sam file stuff:
+# Sam file stuff:
 
 
-
-use the "tail" command to get to the end of the file.
 the second number is the flag number which gives you information about the read ( you can look up the meaning of the "flag" number  in the internet).
-
 The third number is the place where the contig mapped to.
 The forth number is the left position of the read
 The fifth number is the quality number ( the higher the better)
 
 
 samtools flagstat was preformed on the *.sam files.
-
-
 
 
 Depth of coverage :How many reads stack up against any single position in the reference genome.
@@ -399,7 +402,9 @@ Genotype likelihood takes into account all of the possibilities that exist and d
 ANGSD is a pretty cool platform you will use often!
 
 
-Workflow of ANGSD---) first site frequency spectrum (SNP frequency).
+
+# Workflow of ANGSD---) 
+first site frequency spectrum (SNP frequency).
 2- estimate nucleotide diversities
 3-estiemate fst between all populations or pairwise between sets of populations.
 perfom a genetic PCA based on estimatio of the genetic covariance matrix ( this 
@@ -409,7 +414,11 @@ The final code is very interesting and has a lot of relevant genomic information
 
 look up the meaning of the ANGSD command options.
 
-Major allele : most frequent allele.
+# Major allele : most frequent allele.
+
+
+# New commands:
+use the "tail" command to get to the end of the file.
 
 
 
