@@ -665,6 +665,68 @@ For the overrepresented sequences, the fastqc gives you data on the percentage t
 
 ### Entry 36: 2020-03-02, Monday.   
 
+# W hat is differential expression?
+## Differences in transcript abundance b/w experimental groups --------) Genes that are changing
+
+Sample prep ---------------) RNA extraction -----------------) Library prep --------------) SequNencing -----------)
+Quality control (fastQC and trimming) -----------) mapping and counting (Salmon)
+
+# Normalization: 
+data matrix/gene count table
+It is important to normalize fr library size.
+Library composition
+Question: 
+How do you acccount for/analyze the  global differences betweeen samples
+
+Normalization
+Counts per million(CPM)) - Depth
+Transcripts per Kilobase million-----------) Depth and gene lenth
+Fragments per Kilobase million ------------) Depth and gene length
+Edge R -----) Depth, Gene size and library composition 
+DESeq2 -----) Depth and composition 
+
+Differential Expression:
+
+You have to take into account false positives and false negatives
+
+Independent filtering :
+        Limiting the number of tests based on a cut-off (basemean)
+        Benamin, Hochberg(BH)
+              Adjusted p-value
+                    Control False Positives
+                    FDR-False 
+                    
+Generalized Linear Model (GLM)
+-------) Negative binomial distribution
+Waod test -----) p-value
+
+
+
+# Visualization:
+   Sequencing summary statistics
+   barplos of total read counts ( You can do # null genes)
+   
+   After normalization you can do a normalized count analysis.
+   
+   You can also do PCA
+   
+   Gene heat mapping (Uses hierarchical clustering to have the genes/ samples that are similar closer together).
+   
+   Ven diagrams: You can split up up-regulated genes, down-regulated genes, etc...
+   
+   MA plots ----) Log of FC [full change] over log of mean expression.
+   
+   
+   Volcano plots : on one access you have log [full change] vs -log [p-value]
+   
+   log FC scatter plot: Log FC of condition 1 vs Log FC condition 2 
+   
+   individual gene treatment response curves :
+   
+   Examples: Relative Full Change vs treatment
+   
+# Question
+You keep talking about ratio differences and their importance. How about the absolute transcriptomic differences. What if we have the same ratios, but 1  tenth of the transcription????
 
 
 ------    
