@@ -594,7 +594,7 @@ Work flow :
 
 Toay we will work on transcriptomics:
 
-####Experimental Design:
+#### Experimental Design:
 Ten maternal families total; sample labels are “POP_FAM”
 ASC_06, BRU_05, ESC_01, XBM_07, NOR_02, CAM_02, JAY_02, KAN_04, LOL_02, MMF_13
 Two Source Climates (SourceClim:
@@ -725,10 +725,33 @@ Waod test -----) p-value
    
    Examples: Relative Full Change vs treatment
    
-# Question
+## Question
 You keep talking about ratio differences and their importance. How about the absolute transcriptomic differences. What if we have the same ratios, but 1  tenth of the transcription????
 
 
+
+
+
+# Enrichment Analysis:
+Looking at gene sets from functional databases ( Gene Ontology [GO])
+      ----) Molecular function      -----) Example Adenylne cyclase activity
+      ----) Biological process      -----) Puridimine biosynthesis
+      ----) Cell Compartment        -----) Ribozome
+      
+      Another databse: KEGG pathway:
+      Genetic Information Processing 
+      ------) Transcription
+      ------) Splicosome 
+      
+   
+      Met
+      hods: 
+             Overrepresentation analysis 
+             DEG ----) 2200 (ALL)        24(gene set)             18  (gene set 20
+             total -----) 15,000           75                     120
+             ------------) 14% of the genome is differentially expresse/d.                 32%         15%      
+             
+             
 ------    
 <div id='id-section37'/>   
 
