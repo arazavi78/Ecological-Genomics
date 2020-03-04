@@ -819,8 +819,9 @@ low = >0%
 One possibility is that there is not a lot of conifer specific genes on genebank. ( maybe that is why the mapping rate is so low)
 
 
+The reads had the highest mapping rate with the wholle index file (cds) rather than the HC and the HC27 index files.
 
-
+ # Coding
 ------    
 <div id='id-section39'/>   
 
