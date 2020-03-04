@@ -821,6 +821,14 @@ One possibility is that there is not a lot of conifer specific genes on genebank
 
 The reads had the highest mapping rate with the wholle index file (cds) rather than the HC and the HC27 index files.
 
+
+The salmon index command works with the gz files ( you can change the kmer flag ( -k ), if you make it smaller it might make it better but it didn't make it better in our investigations. 
+
+
+The mapping rates between the --seqbias and the normal ones were identical for the cleaned reads because they are clean!!!!!!
+
+
+
  # Coding
 ------    
 <div id='id-section39'/>   
