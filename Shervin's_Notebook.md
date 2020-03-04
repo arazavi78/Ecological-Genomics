@@ -279,6 +279,11 @@ git status
 '''
 
 
+fastqc code:
+
+
+![fastqc](https://github.com/arazavi78/Ecological-Genomics/blob/master/mapping_.PNG)
+
 ------    
 <div id='id-section14'/>   
 
@@ -343,8 +348,9 @@ To test if it is working, make sure you have the main variables loaded on the sy
 Pciture of the code:
 
 
-![code]{
+![code](https://github.com/arazavi78/Ecological-Genomics/blob/master/mapping.PNG)
 
+![code](https://github.com/arazavi78/Ecological-Genomics/blob/master/mapping_.PNG)
 
 
 
@@ -429,7 +435,9 @@ look up the meaning of the ANGSD command options.
 # New commands:
 use the "tail" command to get to the end of the file.
 
+Today's code:
 
+![ANGSD](https://github.com/arazavi78/Ecological-Genomics/blob/master/ANGSD.PNG)
 
 
 ------    
@@ -601,7 +609,7 @@ Work flow :
 
 
 
-Toay we will work on transcriptomics:
+Today we will work on transcriptomics:
 
 #### Experimental Design:
 Ten maternal families total; sample labels are “POP_FAM”
