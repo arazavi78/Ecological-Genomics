@@ -791,6 +791,19 @@ salmon quant -i /data/project_data/RS_RNASeq/ReferenceTranscriptome/Pabies_H27_i
 done
 
 
+
+
+# important notes to consider for the future:
+
+1-Before starting, make sure your destinations are accurate.
+
+
+2- Check for typos from the very beginnning 
+
+
+
+Mapping rate = Percent of the reads in each of the files that mapped to the genome ( not the other way around!)
+
 ------    
 <div id='id-section39'/>   
 
