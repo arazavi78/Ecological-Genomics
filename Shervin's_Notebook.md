@@ -804,6 +804,23 @@ done
 
 Mapping rate = Percent of the reads in each of the files that mapped to the genome ( not the other way around!)
 
+
+
+High confidence----) 70 % or higher
+
+Median 30-70 % percent
+
+low = >0%
+
+
+
+
+
+One possibility is that there is not a lot of conifer specific genes on genebank. ( maybe that is why the mapping rate is so low)
+
+
+
+
 ------    
 <div id='id-section39'/>   
 
