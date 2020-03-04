@@ -828,6 +828,11 @@ The salmon index command works with the gz files ( you can change the kmer flag 
 The mapping rates between the --seqbias and the normal ones were identical for the cleaned reads because they are clean!!!!!!
 
 
+The quant.sf file is where the main info is.
+[Example of quant.sf data ](link-to-image)
+
+
+
 
  # Coding
 ------    
