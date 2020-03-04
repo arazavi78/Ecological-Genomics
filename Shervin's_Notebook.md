@@ -340,6 +340,15 @@ The mypipeline.sh script includes the two other scripts so that the "mother" def
 
 To test if it is working, make sure you have the main variables loaded on the system so you can run the other two scripts from outside of the mypipeline.sh script.
 
+Pciture of the code:
+
+
+![code]{
+
+
+
+
+
 ------    
 <div id='id-section19'/>   
 
