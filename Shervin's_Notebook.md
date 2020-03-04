@@ -829,7 +829,7 @@ The mapping rates between the --seqbias and the normal ones were identical for t
 
 
 The quant.sf file is where the main info is.
-[Example of quant.sf data ](link-to-image)
+[Example of quant.sf data ](https://github.com/arazavi78/Ecological-Genomics/blob/master/quant.sf.PNG)
 
 
 
