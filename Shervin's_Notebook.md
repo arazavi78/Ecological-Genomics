@@ -767,6 +767,29 @@ Looking at gene sets from functional databases ( Gene Ontology [GO])
 ### Entry 38: 2020-03-04, Wednesday.   
 
 
+Today's code:
+
+
+for file in /data/project_data/RS_RNASeq/fastq/cleanreads/NOR*C*R1.cl.fq
+
+do 
+
+salmon quant -i /data/project_data/RS_RNASeq/ReferenceTranscriptome/Pabies_H27_index -l A -r file --validateMappings -o /data/project_data/RS_RNASeq/salmon/cleanedreads
+
+done 
+
+
+
+
+
+for file in /data/project_data/RS_RNASeq/fastq/cleanreads/XBM_07_H*R1.cl.fq
+
+do
+
+salmon quant -i /data/project_data/RS_RNASeq/ReferenceTranscriptome/Pabies_H27_index -l A -r file --validateMappings -o /data/project_data/RS_RNASeq/salmon/cleanedreads
+
+done
+
 
 ------    
 <div id='id-section39'/>   
