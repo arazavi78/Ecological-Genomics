@@ -970,6 +970,15 @@ write.table(countsMatrix, file = "RS_countsMatrix.txt", col.names = T, row.names
 
 ### Entry 48: 2020-03-18, Wednesday.   
 
+Today's agenda:
+
+Learning how to use the online format.
+
+
+
+Note: Change day with climate and run the program again.
+
+congini is a tool that gives you information on genes and their structures.
 
 
 ------    
