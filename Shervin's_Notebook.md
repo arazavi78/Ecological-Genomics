@@ -659,6 +659,15 @@ Note 2:Aimed for 5 biological reps per Trt x SourceClim x Day combo, but day5 ha
 
 ##### My populations are  #NOR H and XBM C
 
+
+#### Data Processing Pipeline:
+1-FastQC on raw reads –> Trimmomatic (done!) –> FastQC on cleaned reads2-\-
+2-Reference transcriptome: 
+` /data/project_data/RS_RNASeq/ReferenceTranscriptome/Pabies1.0-all-cds.fna.gz Downloaded from Congenie.org `
+3-66,632 unigenes, consisting of 26,437 high-confidence gene models, 32,150 medium-confidence gene models, and 8,045 low-confidence gene models
+4-Use Salmon to simulateously map reads and quantify abundance.
+5-Import the data into DESeq2 in R for data normalization, visualization, and statistical tests for differential gene expression.
+
 ##### Notes on the pipeline:
 1-The headcrop comman was used in the trimmomatic program to delete the first 12 base pairs.
 You can se the effect comparing the fastqc of the cleaned reads and the normals reads.
