@@ -923,9 +923,9 @@ Looking at gene sets from functional databases ( Gene Ontology [GO])
 ### Entry 38: 2020-03-04, Wednesday.   
 
 
-Today's code:
+#### Today's code (salmon_trimmed.sh):
 
-
+```
 for file in /data/project_data/RS_RNASeq/fastq/cleanreads/NOR*C*R1.cl.fq
 
 do 
@@ -945,11 +945,9 @@ do
 salmon quant -i /data/project_data/RS_RNASeq/ReferenceTranscriptome/Pabies_H27_index -l A -r file --validateMappings -o /data/project_data/RS_RNASeq/salmon/cleanedreads
 
 done
+```
 
-
-
-
-# important notes to consider for the future:
+### important coding notes to consider for the future:
 
 1-Before starting, make sure your destinations are accurate.
 
@@ -958,19 +956,63 @@ done
 
 
 
-Mapping rate = Percent of the reads in each of the files that mapped to the genome ( not the other way around!)
+ #### finding the mapping rate for all samples:
+For each sample mapped, you now have a directory with several output files including a log of the run. In that log, the mapping rate (% of reads mapped with sufficient quality) is reported. We can view the contents of the file using cat. We can also use grep (i.e., regular expressions) to pull out the mapping rate for all the samples. Though there’s probably a more elegant solution, here is one:
+
+` grep -r --include \*.log -e 'Mapping rate' `
+
+
+ 
+#### notes
+1-Mapping rate = Percent of the reads in each of the files that mapped to the genome ( not the other way around!)
+
+2-High confidence----) 70 % or higher
+
+3-Median 30-70 % percent, low = >0%
+
+4-Pabies_cds_index was used as the indexx ( it contains all reads). is improved the percent mapping significantly.
+
+### combining the quant.sf files:
+
+We can use the the `R` package `tximport`. 
+
+### `R` code:
+
+
+``` library(tximportData)
+library(tximport)
+
+#locate the directory containing the files. 
+dir <- "/data/project_data/RS_RNASeq/salmon/"
+list.files(dir)
+
+# read in table with sample ids
+samples <- read.table("/data/project_data/RS_RNASeq/salmon/RS_samples.txt", header=TRUE)
+
+# now point to quant files
+all_files <- file.path(dir, samples$sample, "quant.sf")
+names(all_files) <- samples$sample
+
+# what would be used if linked transcripts to genes
+#txi <- tximport(files, type = "salmon", tx2gene = tx2gene)
+# to be able to run without tx2gene
+txi <- tximport(all_files, type = "salmon", txOut=TRUE)  
+names(txi)
+
+head(txi$counts)
+
+countsMatrix <- txi$counts
+dim(countsMatrix)
+#[1] 66069    76
+
+# To write out
+write.table(countsMatrix, file = "RS_countsMatrix.txt", col.names = T, row.names = T, quote = F) 
+
+```
 
 
 
-High confidence----) 70 % or higher
-
-Median 30-70 % percent
-
-low = >0%
-
-
-
-
+####  results and discussion :
 
 One possibility is that there is not a lot of conifer specific genes on genebank. ( maybe that is why the mapping rate is so low)
 
@@ -985,52 +1027,12 @@ The mapping rates between the --seqbias and the normal ones were identical for t
 
 
 The quant.sf file is where the main info is.
+
+
 ![Example of quant.sf data ](https://github.com/arazavi78/Ecological-Genomics/blob/master/quant.sf.PNG)
 
-
-
-R code explanation:
-
-
-library(tximportData)
-library(tximport)
-
-#locate the directory containing the files. 
-dir <- "/data/project_data/RS_RNASeq/salmon/"
-list.files(dir)
-
-# read in table with sample ids
-samples <- read.table("/data/project_data/RS_RNASeq/salmon/RS_samples.txt", header=TRUE)
-
-# now point to quant files
-all_files <- file.path(dir, samples$sample, "quant.sf")
-
-#Here we are giving names to the samples
-names(all_files) <- samples$sample
-
-# what would be used if linked transcripts to genes
-#here the tximport  
-txi <- tximport(files, type = "salmon", tx2gene = tx2gene)
-
-# to be able to run without tx2gene
-txi <- tximport(all_files, type = "salmon", txOut=TRUE)  
-names(txi)
-
-head(txi$counts)
-
-countsMatrix <- txi$counts
-dim(countsMatrix)
-#[1] 66069    76
-
-# To write out
-write.table(countsMatrix, file = "RS_countsMatrix.txt", col.names = T, row.names = T, quote = F) 
-
-
-
-
-
-
- # Coding
+  
+ 
 ------    
 <div id='id-section39'/>   
 
@@ -1109,7 +1111,25 @@ write.table(countsMatrix, file = "RS_countsMatrix.txt", col.names = T, row.names
 
 ### Entry 48: 2020-03-18, Wednesday.   
 
-Today's agenda:
+
+#### How we improved mapping rates:
+
+Recall that two weeks ago you all wrote for loops to map your set of cleaned fastq files to the reference transcriptome. We discovered that we had low mapping rates, ~2%! We did some troubleshooting in class. We further hypothesized that many of our reads were not mapping because the reference we had selected included only the coding region. In working with 3’ RNAseq data, much of our sequencing effort is likely to be in the 3’ UTR (untranslated region). We concatenated the reference sequences for the coding (“cds”) and the 3’ UTR (“2kb downstream”) for each gene. We then mapped to this new reference using salmon (as you had done before). Our mapping rate improved dramatically, ranging from 40-70% of reads mapping across samples, mean of 52%.
+
+#### How to import counts matrix and sample ID tables into R and DESeq2
+
+We have used the following code ( this is the completed version) for these purposes:
+
+```
+
+
+
+
+
+
+
+
+#### Additional notes from today's class
 
 Learning how to use the online format.
 
@@ -1118,6 +1138,9 @@ Learning how to use the online format.
 Note: Change day with climate and run the program again.
 
 congini is a tool that gives you information on genes and their structures.
+
+
+
 
 
 ------    
