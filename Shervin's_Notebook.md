@@ -622,20 +622,24 @@ Today we will work on transcriptomics:
 
 #### Experimental Design:
 ##### 1-Ten maternal families total:
+
 sample labels are “POP_FAM” ASC_06, BRU_05, ESC_01, XBM_07, NOR_02, CAM_02, JAY_02, KAN_04, LOL_02, MMF_13
+
 ##### 2-Two Source Climates:
+
 (SourceClim: HotDry (5 fams): ASC_06, BRU_05, ESC_01, XBM_07, NOR_02 and CoolWet (5 fams): CAM_02, JAY_02, KAN_04, LOL_02, MMF_13)
+
 ##### 3-Experimental Treatments (Trt):
+
 Control: watered every day, 16:8 L:D photoperiod at 23C:17C temps
 Heat: 16:8 L:D photoperiod at 35C:26C temps (50% increase in day and night temps over controls)
 Heat+Drought: Heat plus complete water witholding
+
 ##### 4-Three time periods (Day):
+
 Harvested tissues on Days 0, 5, and 10
-
-
-
-Note 1:Extracted RNA from whole seedlings (root, stem, needle tissue)
-Note 2:Aimed for 5 biological reps per Trt x SourceClim x Day combo, but day5 had few RNA extractions that worked
+Extracted RNA from whole seedlings (root, stem, needle tissue)
+Aimed for 5 biological reps per Trt x SourceClim x Day combo, but day5 had few RNA extractions that worked
 
 
 
@@ -661,21 +665,98 @@ Note 2:Aimed for 5 biological reps per Trt x SourceClim x Day combo, but day5 ha
 
 
 #### Data Processing Pipeline:
-1-FastQC on raw reads –> Trimmomatic (done!) –> FastQC on cleaned reads2-\-
+1-FastQC on raw reads –> Trimmomatic (done!) –> FastQC on cleaned reads
+
 2-Reference transcriptome: 
+
 ` /data/project_data/RS_RNASeq/ReferenceTranscriptome/Pabies1.0-all-cds.fna.gz Downloaded from Congenie.org `
+
 3-66,632 unigenes, consisting of 26,437 high-confidence gene models, 32,150 medium-confidence gene models, and 8,045 low-confidence gene models
+
 4-Use Salmon to simulateously map reads and quantify abundance.
+
 5-Import the data into DESeq2 in R for data normalization, visualization, and statistical tests for differential gene expression.
+
+
+
+### fastqc and trimmomatic
+
+Professor Pespeni has done all reads, but as a refresher:
+
+#### trim_loop.sh (found in myscripts on github)
+```
+#!/bin/bash
+
+cd /data/project_data/RS_RNASeq/fastq/
+
+########## Trimmomatic for single end reads
+
+for R1 in *R1.fastq.gz  
+
+
+
+do 
+    echo "starting sample ${R1}"
+    f=${R1/_R1.fastq.gz/}
+    name=`basename ${f}`
+
+    java -classpath /data/popgen/Trimmomatic-0.33/trimmomatic-0.33.jar org.usadellab.trimmomatic.TrimmomaticSE \
+        -threads 1 \
+        -phred33 \
+         "$R1" \
+         /data/project_data/RS_RNASeq/fastq/cleanreads/${name}_R1.cl.fq \
+        ILLUMINACLIP:/data/popgen/Trimmomatic-0.33/adapters/TruSeq3-SE.fa:2:30:10 \
+        LEADING:20 \
+        TRAILING:20 \
+        SLIDINGWINDOW:6:20 \
+        HEADCROP:12 \
+        MINLEN:35 
+     echo "sample ${R1} done"
+done
+
+```
+
+
+#### fastqc_trimmed.sh
+
+```
+
+#!/bin/bash
+
+mkdir fastqc_trimmed
+
+cd ~/Ecological-Genomics/myresults/fastqc_trimmed
+
+for file in /data/project_data/RS_ExomeSeq/fastq/edge_fastq/pairedcleanreads/XPK*.cl.pd.fq
+
+do
+
+fastqc ${file} -o ./
+
+done
+
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ##### Notes on the pipeline:
 1-The headcrop comman was used in the trimmomatic program to delete the first 12 base pairs.
 You can se the effect comparing the fastqc of the cleaned reads and the normals reads.
 2-For the overrepresented sequences, the fastqc gives you data on the percentage the reads have been found and also the length of it.
-
-
-
-
 ------    
 <div id='id-section34'/>   
 
