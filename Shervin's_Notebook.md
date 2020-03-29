@@ -739,14 +739,47 @@ done
 ```
 
 
+#### Mapping (Salmon)
+
+Use Salmon to quantify transcript abundance
+
+###### First step: Index the reference transcriptome. This only needs to be done once and has been done already, but here’s the code:
+```
+cd /data/project_data/RS_RNAseq/ReferenceTrancriptome/
+salmon index -t Pabies1.0-all-cds.fna.gz -i Pabies_cds_index --decoys decoys.txt -k 31
+```
+
+
+###### Second step: Start quantification! Let’s see if we can write a for loop together to start the mapping based on the Salmon tutorial
+
+#### Salmon.sh file for my populations:
+```
+
+for file in NOR_02_H*R1.cl.fq
+do
+
+salmon quant -i /data/project_data/RS_RNASeq/ReferenceTranscriptome/Pabies_HC27_                                         index -l A -r ${file} --validateMappings -o /data/project_data/RS_RNASeq/salmon/                                         cleanedreads/${file}
+
+
+done
 
 
 
 
 
+for file in XBM_07_C*R1.cl.fq
+
+do
+
+salmon quant -i /data/project_data/RS_RNASeq/ReferenceTranscriptome/Pabies_HC27_                                         index -l A -r ${file} --validateMappings -o /data/project_data/RS_RNASeq/salmon/                                         cleanedreads/${file}
 
 
+done
 
+
+```
+
+#### the relevant libraries + the programs DESeq2 were installed.
 
 
 
@@ -754,9 +787,18 @@ done
 
 
 ##### Notes on the pipeline:
+
+
 1-The headcrop comman was used in the trimmomatic program to delete the first 12 base pairs.
+
+
 You can se the effect comparing the fastqc of the cleaned reads and the normals reads.
+
+
 2-For the overrepresented sequences, the fastqc gives you data on the percentage the reads have been found and also the length of it.
+
+
+
 ------    
 <div id='id-section34'/>   
 
