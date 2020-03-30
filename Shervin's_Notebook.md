@@ -1281,10 +1281,10 @@ summary(res_treatCD)
 ```
 
 
-##### Data visualization
+#Data visualization
 
 
-# MA plot
+## MA plot
 
 ```
 
@@ -1292,7 +1292,7 @@ summary(res_treatCD)
 plotMA(res_treatCD,ylim=c(-3,3))
 ```
 
-# PCA
+## PCA
 
 ```
 vsd <- vst(dds, blind=FALSE)
@@ -1328,7 +1328,7 @@ p
 
 
 
-# Heatmap of top 20 genes sorted by pvalue
+## Heatmap of top 20 genes sorted by pvalue
 
 
 ```
@@ -1339,15 +1339,12 @@ mat <- mat - rowMeans(mat)
 df <- as.data.frame(colData(dds)[,c("treatment","climate","day")])
 pheatmap(mat, annotation_col=df)
 
-
-
-
 ```
 
 
 
 
-#### Additional notes from today's class
+## Additional notes from today's class
 
 Learning how to use the online format.
 
