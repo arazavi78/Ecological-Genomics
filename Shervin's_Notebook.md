@@ -1120,6 +1120,10 @@ Recall that two weeks ago you all wrote for loops to map your set of cleaned fas
 
 We have used the following code ( this is the completed version) for these purposes:
 
+
+
+# R code for DESeq2 experimental designs and GLMs
+
 ```
 
 ## Set your working directory
