@@ -1436,6 +1436,16 @@ congeini is a tool that gives you information on genes and their structures.
 
 
 
+
+
+
+
+#### Notes:
+
+You can type R and do R from a terminal
+
+Also, you can do ` R script *****.R` to run an R script !
+
 ------    
 <div id='id-section59'/>   
 
