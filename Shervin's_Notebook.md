@@ -1121,8 +1121,9 @@ Recall that two weeks ago you all wrote for loops to map your set of cleaned fas
 We have used the following code ( this is the completed version) for these purposes:
 
 
-
-# R code for DESeq2 experimental designs and GLMs
+#  DESeq2_RS_classLive_day10start.R file (in the myscripts directory)
+##  DESeq2_RS_classLive contains the same codes but for all samples not just day 10
+## R code for DESeq2 experimental designs and GLMs
 
 ```
 
