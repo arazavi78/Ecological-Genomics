@@ -1394,6 +1394,105 @@ congeini is a tool that gives you information on genes and their structures.
 
 ### Entry 53: 2020-03-25, Wednesday.   
 
+# Epigenetics
+
+#### Experimental species: Acartia tonsa
+
+Acartia tonsa is a calanoid copepod that has a world wide distribution. It inhabits estuaries and coastal waters and it typically the most abundant zooplankton present. Because of their huge population sizes and global distribution, they play an important role in ocean biogeochemical cycling and ecosystem functioning. For example, they’re an important food base for many fishes. Given their broad distribution in dynamic habitats (estuaries), they can tolerate and live in a broad range of salinities, freshwater to seawater, and temperatures, among other stressors.
+
+We know that the world is rapidly changing due to human activities and it is important to understand how species will respond to these changes. We were interested in understanding how A. tonsa could respond to stressful environments that will likely be caused by climate change. Can they adapt to rapid changes in temperature and acidity? How might epigenetic responses interact with adaptation to enable resilience?
+
+A. tonsa is a great system to ask these questions for a number of reasons. First, their generation time is only ~10-20 days and they’re tiny! Only 1-2 mm. This means we can easily execute multi-generational studies with thousands of individuals. Second, because they can tolerate such variable environments, they should have lots of plasticity to respond to environmental fluctuations. Finally, their large population sizes mean that genetic diversity should be high, giving them high adaptive potential. This means that if any species can respond to rapid environmental change, it is likely A. tonsa.
+
+#### Experimental design
+
+##### 4 treatments:
+
+1-Control
+
+2-Hgh temperature
+
+3-High CO2
+
+4- High temperature + High CO2
+
+We collected A. tonsa from the wild, common gardened them for three generations, then split them into four treatments with four replicates each and about 3,000-5,000 individuals per replicate. We left them to evolve in these conditions for 25 generations.
+
+Samples were collected at generation F0 and F25 to quantify methylation frequencies using reduced representation bisulfite sequencing (RRBS). 
+
+#### Reduced representation bisulfite sequencing (RRBS)
+
+Following the adapter ligation, we bisulfite convert all unmethylated C’s to T’s.
+
+Before starting we also spiked in a small amount of DNA from E. coli that we know wasn’t methylated. Using this, we can calculate downstream how efficient our bisulfite conversion was.
+
+
+#### Pipeline
+1-Visualize, clean, visualize
+    You won’t have to do this step
+    Visualize quality of raw data with fastqc
+    clean raw data with Trimmomatic
+    Visualize quality of cleaned data with fastqc
+
+2-Align to Acartia tonsa reference genome (Bismark)
+    also align lambda DNA to check for conversion efficiency (Done for you)
+
+3-Extract methylation calls
+
+4-Process and filter calls
+
+5-Summary figures (PCA, clustering, etc)
+
+6-Test for differential methylation (Methylkit)
+
+
+#### Why do bisulfate sequence data look different?
+
+---------------------)  bisulfite conversion! And don’t forget that the reverse strand is the reverse complement of the bisulfite converted forward strand, and is not just the BS converted bottom strand. See image below:
+
+
+
+#### bismark.sh
+
+Questions : 
+Why is this different from typical DNA alignment?
+
+What do we need to do to the genome?
+
+##### Code:
+
+```
+#!/bin/bash
+
+bismark --bowtie2 --multicore 1 \
+    --genome /data/project_data/epigenetics/reference_genome \
+    --output_dir /data/project_data/epigenetics/aligned_output \
+    -1 /data/project_data/epigenetics/trimmed_fastq/SAMPLEID_1.fq.gz \
+    -2 /data/project_data/epigenetics/trimmed_fastq/SAMPLEID_2.fq.gz \
+    --rg_tag --rg_id SAMPLEID --rg_sample SAMPLEID --gzip --local --maxins 1000
+    
+    
+```
+
+
+
+#### bismark parameters:
+
+--bowtie2 tells bismark to map with bowtie2. There are other options possible here (bowtie1, for example)
+--multicore 1 Use one core. We could use multiple cores to make alignment faster, but we may crash the server if many of you are mapping at once if we do this.
+--genome the location of our converted genome. The bismark package has a command to prep your genome that I've already done. You can check it out: bismark_methylation_extractor --help
+-1 the path to your sample's forward read
+-2 the path to your sample's reverse read
+--rg_tag add a read group tag that identifies your individual sample in your output bam file
+--rg_id the string that defines the readgroup ID
+--rg_sample the string that defines your readgroup sample ID
+--gzip for the temporary files, use gzip to save space
+--local align with the local alignment option in bowtie2. This will include soft clipping, which should increase mapping rate, but comes at the cost of (maybe) increasing mis-mapping. 
+--maxins specifies the maximum insert size for mapping. We're using 1000 as our libraries had a mean insert size of ~200. Note that this is smaller than most sequencing libraries.
+
+#### Bismark differences with bowtie2:
+
+Bismark is, at its core, running bowtie2. But there are important differences. If you remember, we’re using two modified versions of the genome where we’ve converted C-to-T AND G-to-A. We also generate temporary files of our trimmed reads where we convert C-to-T (read1) AND G-to-A (read2) so they can map to this converted genome. This makes the alignment a bit harder because 1. the complexity of DNA is reduced, and 2. we are mapping to two separate genomes.
 
 
 ------    
@@ -1434,7 +1533,33 @@ congeini is a tool that gives you information on genes and their structures.
 
 ### Entry 58: 2020-04-01, Wednesday.   
 
+# Epigenetics day 2
 
+
+#### Code to extract methylation data:
+
+```
+bismark_methylation_extractor --bedGraph --scaffolds --gzip \
+    --cytosine_report --comprehensive \
+    --no_header \
+    --parallel 6 \
+    --output ~/tonsa_epigenetics/analysis/methylation_extract/ \
+    --genome_folder /data/copepods/tonsa_genome/ \
+    *pe.bam
+
+```
+
+
+#### parameters of coverage files:
+Column 1: Chromosome
+Column 2: Start position
+Column 3: End position
+Column 4: Methylation percentage
+Column 5: Number of methylated C's
+Column 6: Number of unmethylated C's
+
+
+#### methylki analysis
 
 
 
